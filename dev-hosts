@@ -1,0 +1,11 @@
+[elk-master]
+elk-node-1
+
+[elk-nodes]
+elk-node-2
+elk-node-3
+
+[elk-stack]
+elk-node-1
+elk-node-2
+elk-node-3
