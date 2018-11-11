@@ -1,0 +1,12 @@
+---
+- hosts: elk-stack
+  become: yes
+  tasks:
+          - name: install OpenJDK 8 JRE
+            yum: name=java-1.8.0-openjdk state=present update_cache=yes
+
+          - name: Add Elastic signing key
+            rpm_key: key=https://artifacts.elastic.co/GPG-KEY-elasticsearch state=present
+
+          - name: Add Elasticsearch repo
+            copy: src=../repos/elasticsearch.repo dest=/etc/yum.repos.d/
